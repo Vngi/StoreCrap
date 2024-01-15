@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Etsy Store Information</title>
+</head>
+<body>
+  <h1>Etsy Store Information</h1>
+
+  <div id="stores-container">
+    <!-- Existing stores will be dynamically added here -->
+    <div id="deleteStoreForm" class="hidden">
+      <!-- Form content for deleting a store will be dynamically added here -->
+      <label for="selectStore">Select Store:</label>
+      <select id="selectStore">
+        <!-- Dynamically populate options with store names -->
+        ${allStores.map(store => `<option value="${store.storeName}">${store.storeName}</option>`).join('')}
+      </select>
+      <button onclick="deleteSelectedStore()">Delete</button>
+    </div>
+
+    <div id="addStore">
+      <button class="action-button" onclick="showInputForm(event)">Add Store</button>
+      <button class="action-button" onclick="showDeleteStoreForm()">Delete Store</button>
+    </div>
+  </div>
+
+  <div id="newStoreForm" class="hidden">
+    <!-- Form content for adding a new store will be dynamically added here -->
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

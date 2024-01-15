@@ -1,0 +1,191 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+}
+
+#stores-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px; /* Add padding to the container */
+}
+
+.store {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 200px;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent long text from overflowing */
+}
+
+.store:hover {
+  transform: scale(1.05);
+}
+
+.store h2 {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 10px;
+  white-space: nowrap; /* Prevent line breaks in store name */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Display ellipsis (...) for overflowed text */
+}
+
+.store-info {
+  margin-top: 5px;
+}
+
+#newStoreForm,
+#deleteStoreForm {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  cursor: auto;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#newStoreForm label,
+#deleteStoreForm label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+#newStoreForm input,
+#newStoreForm select,
+#deleteStoreForm select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#newStoreForm button,
+#deleteStoreForm button {
+  width: 100%;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#newStoreForm button:hover,
+#deleteStoreForm button:hover {
+  background-color: #45a049;
+}
+
+#addStore button,
+#deleteStore button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#addStore button:hover,
+#deleteStore button:hover {
+  background-color: #45a049;
+}
+
+#downloadLink {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+#downloadLink:hover {
+  background-color: #45a049;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.sensitive-info-button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sensitive-info-button:hover {
+  background-color: #45a049;
+}
+
+/* Add this style for the opened form effect */
+#newStoreForm.opened,
+#deleteStoreForm.opened {
+  transform: scale(1.1);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Style adjustments for the opened form */
+#newStoreForm.opened,
+#deleteStoreForm.opened {
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#newStoreForm.opened label,
+#deleteStoreForm.opened label {
+  color: #4caf50;
+}
+
+#newStoreForm.opened input,
+#deleteStoreForm.opened select {
+  border: 1px solid #4caf50;
+}
+
+#newStoreForm.opened button,
+#deleteStoreForm.opened button {
+  background-color: #4caf50;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .store {
+    width: calc(50% - 20px); /* Two cards per row on smaller screens */
+  }
+}
